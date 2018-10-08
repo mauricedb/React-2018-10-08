@@ -1,22 +1,23 @@
 {
   "name": "mod-02",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.6.1",
+    "lodash": "^4.17.11",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   },
-  "dependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "babel-loader": "^8.0.4",
-    "eslint": "^5.6.1"
-  }
+  "devDependencies": {
+    "@babel/preset-env": "^7.1.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maurice",
+  "license": "MIT"
 }
