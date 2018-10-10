@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 function MovieListItem({ movie }) {
   return (
     <div>
-      <h3>{movie.title}</h3>
+      <h3 onClick={() => {}}>{movie.title}</h3>
       <img src={movie.backdrop_path} />
       <p>{movie.overview}</p>
     </div>

@@ -5,7 +5,7 @@ import MovieListItem from './MovieListItem';
 
 const MovieList = ({ movies }) => (
   <div>
-    <h1>Top Movies</h1>
+    <h1>Top  Movies</h1>
     {movies.map(movie => (
       <MovieListItem key={movie.id} movie={movie} />
     ))}

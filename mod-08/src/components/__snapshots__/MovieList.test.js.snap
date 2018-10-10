@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The MovieList component renders the same tree with a movie 1`] = `
+<div>
+  <h1>
+    Top  Movies
+  </h1>
+  <div>
+    <h3
+      onClick={[Function]}
+    >
+      A movie
+    </h3>
+    <img
+      src="the image url"
+    />
+    <p>
+      The coool movie
+    </p>
+  </div>
+</div>
+`;
+
+exports[`The MovieList component renders the same tree with no movies 1`] = `
+<div>
+  <h1>
+    Top  Movies
+  </h1>
+</div>
+`;

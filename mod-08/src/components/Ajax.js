@@ -17,6 +17,9 @@ class Ajax extends Component {
   }
 
   render() {
+
+    // throw new Error();
+
     const { loading, errors, data } = this.state;
     const { children } = this.props;
 
