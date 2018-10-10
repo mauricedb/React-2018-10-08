@@ -1,20 +1,24 @@
 class Calculator {
   // el: HTMLElement = null;
 
-  constructor(private readonly el: HTMLElement) {
+  constructor(private readonly el: HTMLElement | null) {
     // this.el = el;
   }
 
   public add(x: number, y: number): number {
     // this.el = null;
     const result = x + y;
-    this.el.textContent = result.toString();
+    if (this.el) {
+      this.el.textContent = result.toString();
+    }
     return result;
   }
 
-  subtract(x, y) {
+  subtract(x: number, y: number) {
     const result = x - y;
-    this.el.textContent = result.toString();
+    if (this.el) {
+      this.el.textContent = result.toString();
+    }
     return result;
   }
 }
@@ -29,7 +33,7 @@ console.log("1 + 2 =", calc.add(1, 2));
 
 const person = {
   firstName: "Maurice",
-  lastName: null as string
+  lastName: null as string | null
 };
 
 person.firstName = "Joe";
@@ -37,7 +41,7 @@ person.firstName = "Joe";
 person.lastName = "lkdsd";
 
 interface Sleepy {
-  sleep();
+  sleep(): void;
 }
 
 class Cat implements Sleepy {
@@ -62,7 +66,7 @@ dog = {
   sleep() {}
 };
 
-function gotoSleep(animal: { sleep() }) {
+function gotoSleep(animal: { sleep(): void }) {
   animal.sleep();
 }
 
@@ -74,20 +78,60 @@ function printFullName(o: { fistName: string; lastName: string }) {
 
 printFullName({ fistName: "", lastName: "" });
 
-
-interface DoStufffOption{
-  x: number
-  y: number
+interface DoStufffOption {
+  x: number;
+  y: number;
 }
 
-function doStuff(options: Partial<DoStufffOption>){
+function doStuff(options: Partial<DoStufffOption>) {}
 
+doStuff({ x: 1, y: 2 });
+
+doStuff({});
+
+const x: number[] = [1];
+
+// maurice.de.beijer@gmail.com
+
+type Animal = Dog | Cat;
+
+function doYourThing(animal: Animal) {
+  if (animal instanceof Dog) {
+    animal.attack();
+  }
+  if (animal instanceof Cat) {
+    animal.climb();
+  }
+
+  animal.sleep();
 }
 
+// function doStuff2(option: 1 | "one" | true) {
+//   return 1 - +option;
+// }
 
-doStuff({x:1 , y:2})
+// doStuff2(1);
+// doStuff2(2);
+// doStuff2("one");
+// doStuff2("two");
 
-doStuff({})
+// function getData() {
+//   fetch("http://theproblemsolver.nl")
+//     .then(rsp => rsp.text())
+//     .then(txt => console.log(txt))
+//     .catch(err => console.warn(err));
+// }
 
+async function getData() {
+  try {
+    const rsp = await fetch("http://theproblemsolver.nl");
+    if (rsp.ok) {
+      const txt = await rsp.text();
+      console.log(txt);
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+}
 
-const x : number[]= [1]
+getData();
